@@ -10,8 +10,6 @@ import com.kurtukov.translate.network.gson.DetectPendingResult;
 import com.kurtukov.translate.network.gson.LanguagesPendingResult;
 import com.kurtukov.translate.network.gson.TranslatePendingResult;
 
-import java.net.SocketTimeoutException;
-import java.net.UnknownHostException;
 
 public class Interactor implements IInteractor, INetworkManager.OnPendingResultListener {
 
@@ -90,20 +88,6 @@ public class Interactor implements IInteractor, INetworkManager.OnPendingResultL
 
             if (mLanguagesPendingResult != null) {
 
-                //     mLanguagesPendingResult.getLanguageGroup().getLanguageName()
-//                Log.e("Amrel", LanguageUtils.getLanguageList(mLanguagesPendingResult.getLanguageGroup()).toString());
-//
-//                Log.e("Amrel", mLanguagesPendingResult.getDirs().toString());
-//
-//                Log.e("Amrel be", mLanguagesPendingResult.getLanguageGroup().getLanguageName("be"));
-//
-//                 Log.e("Amrel be", LanguageUtils.getLanguagesOfTranslation(mLanguagesPendingResult.getDirs(), "ru").toString());
-//
-//                Log.e("Amrel", LanguageUtils.getLanguagesFromLanguageCodes(mLanguagesPendingResult.getLanguageGroup(), LanguageUtils.getTranslateLanguageCodes(mLanguagesPendingResult.getDirs())).toString());
-//
-//                Log.e("Amrel", mLanguagesPendingResult.getLanguageGroup().getLanguageCode("Шведский"));
-//
-//                Log.e("Amrel", LanguageUtils.getTranslateLanguageCodes(mLanguagesPendingResult.getDirs()).toString());
             }
         }
 
@@ -111,10 +95,6 @@ public class Interactor implements IInteractor, INetworkManager.OnPendingResultL
 
     @Override
     public void onError(Throwable throwable) {
-        if (throwable instanceof UnknownHostException)
-            Log.e("Amrel", "Нет сети, }{ули ты хочешь?");
-        else if (throwable instanceof SocketTimeoutException)
-            Log.e("Amrel", "Долго ждеем");
-        //Log.e("Amrel", throwable.toString());
+//TODO Написать обработку ошибок
     }
 }

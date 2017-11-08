@@ -257,10 +257,6 @@ public class MainActivity extends AppCompatActivity implements IMainActivity, Vi
         int height = getWindowManager().getDefaultDisplay().getHeight();
 
         boolean isLandscape = width > height;
-//        if(isLandscape)
-//            //mOrientation = "Альбомная";
-//        else
-//            //mOrientation = "Портретная";
         return isLandscape;
     }
 
